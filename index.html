@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Collapsible Menu Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            menu.classList.toggle("collapsed");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Awesome Website</h1>
+        </header>
+        <div class="content-wrapper">
+            <aside id="sideMenu">
+                <div class="menu-header">
+                    <button onclick="toggleMenu()">☰ Menu</button>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Products</a>
+                        <ul class="submenu">
+                            <li><a href="#">Product A</a></li>
+                            <li><a href="#">Product B</a></li>
+                            <li><a href="#">Product C</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Services</a></li>
+                    <li>
+                        <a href="#">About Us</a>
+                        <ul class="submenu">
+                            <li><a href="#">Our History</a></li>
+                            <li><a href="#">Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </aside>
+            <main>
+                <h2>Welcome!</h2>
+                <p>This is the main content area of your website. You can add all your important information here.</p>
+                <p>Feel free to customize this page with text, images, and other elements.</p>
+            </main>
+        </div>
+        <footer>
+            <p>&copy; <?php echo date("Y"); ?> My Awesome Website</p>
+        </footer>
+    </div>
+</body>
+</html>

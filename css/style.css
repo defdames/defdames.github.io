@@ -1,0 +1,93 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+}
+
+aside#sideMenu {
+    background-color: #333; /* Dark grey sidebar background */
+    color: white;
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+aside#sideMenu.collapsed {
+    width: 50px;
+}
+
+.menu-header {
+    padding: 1em;
+    text-align: center;
+}
+
+.menu-header button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items li a {
+    display: block;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.menu-items li a:hover {
+    background-color: #555; /* Slightly lighter grey on hover */
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 1em;
+    margin: 0;
+    background-color: #444; /* Slightly darker grey for submenu */
+}
+
+.submenu li a {
+    padding: 0.6em 1.5em;
+    font-size: 0.9em;
+}
+
+main {
+    padding: 2em;
+    background-color: white;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
