@@ -3,54 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Collapsible Menu Site</title>
+    <title>Introducing Me</title>
     <link rel="stylesheet" href="css/style.css">
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("sideMenu");
-            menu.classList.toggle("collapsed");
+        function toggleSubmenu(element) {
+            var submenu = element.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
+                submenu.classList.toggle('collapsed');
+            }
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>My Awesome Website</h1>
-        </header>
-        <div class="content-wrapper">
-            <aside id="sideMenu">
-                <div class="menu-header">
-                    <button onclick="toggleMenu()">☰ Menu</button>
-                </div>
-                <ul class="menu-items">
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <a href="#">Products</a>
-                        <ul class="submenu">
-                            <li><a href="#">Product A</a></li>
-                            <li><a href="#">Product B</a></li>
-                            <li><a href="#">Product C</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Services</a></li>
-                    <li>
-                        <a href="#">About Us</a>
-                        <ul class="submenu">
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Our Team</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Contact</a></li>
+        <aside class="sidebar">
+            <div class="site-title">
+                <h1>[Your Name]</h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <div class="menu-item" onclick="toggleSubmenu(this)">About Me</div>
+                    <ul class="submenu">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#background">Background</a></li>
+                        <li><a href="#interests">Interests</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="menu-item" onclick="toggleSubmenu(this)">Experience</div>
+                    <ul class="submenu collapsed">
+                        <li><a href="#work">Work History</a></li>
+                        <li><a href="#projects">Personal Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="menu-item" onclick="toggleSubmenu(this)">Contact</div>
+                    <ul class="submenu collapsed">
+                        <li><a href="#email">Email</a></li>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                        <li><a href="#github">GitHub</a></li>
+                    </ul>
+                </li>
+                <li><a href="#resume" class="menu-item">Resume</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Hello there! My name is [Your Name], and I'm excited to share a bit about myself with you. I'm passionate about [mention a key passion or two].</p>
+                <p>This website serves as a personal introduction, highlighting my background, experiences, and interests. Feel free to explore the different sections to learn more!</p>
+            </section>
+
+            <section id="background">
+                <h2>Background</h2>
+                <p>I grew up in [Your Hometown/Region] and have always been fascinated by [mention an early interest]. My educational journey led me to study [Your Field of Study] at [Your University/Institution].</p>
+                <p>During my studies, I developed a strong foundation in [mention key skills or knowledge gained]. This has shaped my approach to [mention your field or interests].</p>
+            </section>
+
+            <section id="interests">
+                <h2>Interests</h2>
+                <p>Outside of my professional pursuits, I have a keen interest in [mention hobby 1], [mention hobby 2], and [mention hobby 3]. These activities help me to [explain the benefit of these hobbies].</p>
+                <p>I also enjoy [mention another interest, perhaps something less common] which allows me to [explain the benefit].</p>
+            </section>
+
+            <section id="work">
+                <h2>Work History</h2>
+                <p>My professional journey includes roles at [Previous Company 1] where I worked as a [Your Role] and was responsible for [key responsibilities].</p>
+                <p>I also gained valuable experience at [Previous Company 2] as a [Your Role], focusing on [key responsibilities].</p>
+            </section>
+
+            <section id="projects">
+                <h2>Personal Projects</h2>
+                <p>In my spare time, I enjoy working on personal projects such as [Project 1] which involved [brief description].</p>
+                <p>Another project I'm proud of is [Project 2], where I [brief description]. You can find more details on my [link to portfolio or GitHub if applicable].</p>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>[Skill 1]</li>
+                    <li>[Skill 2]</li>
+                    <li>[Skill 3]</li>
+                    <li>[Skill 4]</li>
+                    <li>[Skill 5]</li>
                 </ul>
-            </aside>
-            <main>
-                <h2>Welcome!</h2>
-                <p>This is the main content area of your website. You can add all your important information here.</p>
-                <p>Feel free to customize this page with text, images, and other elements.</p>
-            </main>
-        </div>
-        <footer>
-            <p>&copy; <?php echo date("Y"); ?> My Awesome Website</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>You can reach me via email at <a href="mailto:[Your Email]">[Your Email]</a>.</p>
+                <p>Connect with me on LinkedIn: <a href="[Your LinkedIn Profile URL]" target="_blank">LinkedIn Profile</a>.</p>
+                <p>Check out my projects on GitHub: <a href="[Your GitHub Profile URL]" target="_blank">GitHub Profile</a>.</p>
+            </section>
+
+            <section id="resume">
+                <h2>Resume</h2>
+                <p>You can download my resume <a href="[Link to your Resume]" target="_blank">here</a>.</p>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; <?php echo date("Y"); ?> [Your Name]. All rights reserved.</p>
         </footer>
     </div>
 </body>
